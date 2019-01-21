@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <script>
+
+        //배열이란, 배열 객체 생성방법(배열은 객체이다 그러므로 속성과 메소드가 존재함), 배열 속성, 배열메소드
+        //배열 : 인덱스를 이용해서 n개의 데이터를 하나의 변수에 담고있는 형태 {인데스는 0부터 시작한다.}
+
+        //배열 객체 생성 방법
+
+        //크기를 지정하지 않은 배열 객체 생성
+        var varArr1 = new Array();
+        console.log("varArr1 : " + varArr1);
+
+        varArr1[0] = "A";                             //빈 공간에 데이터 생성 방법 후술하는 방법에도 동일 방법으로 추가 가능.
+        varArr1[1] = 123;
+        varArr1[2] = true;
+        console.log("varArr1 : " + varArr1);
+
+
+        //크기를 지정한 배열 객체 생성
+        var varArr2 = new Array(5);
+        console.log("varArr2 : " + varArr2);
+
+        //배열 생성과 데이터저장을 동시에
+        var varArr3 = new Array(123, "ABC", true, false, function fun() { }, {}, undefined);
+        console.log("varArr3 : " + varArr3);
+
+        var varArr4 = [123, "ABC", true, {}];    //대괄호가 new array의 역할을 함.
+        console.log("varArr4 : " + varArr4);
+
+
+
+        //배열 속성 length : 배열 크기(길이)
+
+        var varArr = new Array(0, 1, 2);
+        console.log("varArr.length : " + varArr.length);   //index : 0 1 2 , length : 3  (0부터 시작하므로 유의)
+
+
+        //배열 메소드
+
+        //.indexOf() : 인덱스 검색
+
+        var varArrIndex = new Array(123, "ABC", "가나다", "abc", "가나다", "123");
+        console.log("varArrIndex.indexOf(\"가나다\") : " + varArrIndex.indexOf("가나다"));  //2
+        console.log("varArrIndex.lastIndexOf(\"가나다\") : " + varArrIndex.lastIndexOf("가나다"));  //4
+        console.log("varArrIndex.lastIndexOf(\"XYZ\") : " + varArrIndex.lastIndexOf("XYZ"));  // 없으므로 -1
+
+        //.concat() : 서로 다른 2개의 데이터를 연결함 (배열을 붙을 때 사용함)
+        var varArrFir = new Array("ABC", "DEF", "GHI", "JKL");
+        var varArrSec = new Array("가나다", "라마바", "사아자", "차타카");
+        var varArrRex = varArrFir.concat(varArrSec);
+        console.log("varArrFir : " + varArrFir);
+        console.log("varArrSec : " + varArrSec);
+        console.log("varArrRex : " + varArrRex);
+
+        //.join() : 배열 데이터를 문자열로 변환
+
+        var varArrJoin = new Array("AB", "CD", "EF", "HI");
+        console.log("varArrJoin : " + varArrJoin.join());
+        console.log("varArrJoin : " + varArrJoin.join("|"));
+        console.log("varArrJoin : " + varArrJoin.join(":"));
+        console.log("varArrtoString : " + varArrJoin.toString());
+
+        //.sort() 배열 정렬 (알파벳 순 등)
+
+        var varArrSort = new Array("E", "B", "A", "C", "D");
+        console.log("varArrSortBefore : " + varArrSort);
+        console.log("varArrSort : " + varArrSort.sort());
+        console.log("varArrSortAfter : " + varArrSort);
+
+        //.reverse() 배열 순서 역전
+
+        var varArrReverse = new Array("E", "B", "A", "C", "D");    //알파벳 역 순의 의미가 아님. 단순한 배열 순서 역전
+        console.log("varArrReverseBefor : " + varArrReverse);
+        console.log("varArrReverse.reverse() : " + varArrReverse.reverse());   //값은 D C A B E 
+        console.log("varArrReverseAfter : " + varArrReverse);
+
+        //.push()  데이터 추가
+        var varArrPush = new Array("ABC", "DEF")
+        console.log("varArrPush : " + varArrPush.push("가나다", "라마바"));
+        console.log("varArrPush : " + varArrPush);
+
+
+        //.shift(), .pop() 첫번째, 마지막 데이터 삭제
+
+        var varArrShiftPop = new Array("가", "나", "다", "라", "마")
+        console.log("varArrShiftPop.shift() : " + varArrShiftPop.shift());
+        console.log("varArrShiftPop : " + varArrShiftPop);
+
+        console.log("varArrShiftPop.pop() : " + varArrShiftPop.pop());
+        console.log("varArrShiftPop : " + varArrShiftPop);
+
+        varArrShiftPop.unshift("가");  // shift의 반대이므로, 추가임
+        varArrShiftPop[varArrShiftPop.length] = "마"; //위의 가 나 다 라에서 맨 마지막에 추가되므로 마가 추가됨.
+        console.log("varArrShiftPopOri : " + varArrShiftPop);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
